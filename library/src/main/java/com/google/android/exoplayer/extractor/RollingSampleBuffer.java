@@ -15,6 +15,7 @@
  */
 package com.google.android.exoplayer.extractor;
 
+import android.util.Log;
 import com.google.android.exoplayer.C;
 import com.google.android.exoplayer.SampleHolder;
 import com.google.android.exoplayer.upstream.Allocation;
@@ -539,7 +540,7 @@ import java.util.concurrent.LinkedBlockingDeque;
       if (queueSize == 0) {
         return false;
       }
-	  Log.i("roll", "roll panpan test, in peekSample, go in.\n");
+	  Log.i("roll", "roll panpan test, in peekSample, go in, relativeReadIndex = " + relativeReadIndex);
       holder.timeUs = timesUs[relativeReadIndex];
       holder.size = sizes[relativeReadIndex];
       holder.flags = flags[relativeReadIndex];
@@ -555,7 +556,7 @@ import java.util.concurrent.LinkedBlockingDeque;
      *     required after advancing the index. Data prior to this position can be dropped.
      */
     public synchronized long moveToNextSample() {
-      Log.i("roll", "roll panpan test, in moveToNextSample, go in.\n");
+      Log.i("roll", "roll panpan test, in moveToNextSample, go in, relativeReadIndex = " + relativeReadIndex);
       queueSize--;
       int lastReadIndex = relativeReadIndex++;
       absoluteReadIndex++;

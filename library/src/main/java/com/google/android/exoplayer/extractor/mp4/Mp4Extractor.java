@@ -113,7 +113,7 @@ public final class Mp4Extractor implements Extractor, SeekMap {
   public int read(ExtractorInput input, PositionHolder seekPosition)
       throws IOException, InterruptedException {
     while (true) {
-	  Log.i("mp4extractor", "Mp4Extractor exo panpan test, in read, parserState = " + parserState);
+	  //Log.i("mp4extractor", "Mp4Extractor exo panpan test, in read, parserState = " + parserState);
       switch (parserState) {
         case STATE_AFTER_SEEK:
           if (input.getPosition() == 0) {
