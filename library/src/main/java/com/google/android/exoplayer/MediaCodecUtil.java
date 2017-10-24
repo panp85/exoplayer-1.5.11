@@ -154,6 +154,7 @@ public final class MediaCodecUtil {
         if (isCodecUsableDecoder(codecInfo, codecName, secureDecodersExplicit)) {
           for (String supportedType : codecInfo.getSupportedTypes()) {
             if (supportedType.equalsIgnoreCase(mimeType)) {
+			  Log.i("codecinfo", "codecinfo panpan test, in getDecoderInfosInternal, codecName = " + codecName);
               try {
                 CodecCapabilities capabilities = codecInfo.getCapabilitiesForType(supportedType);
                 boolean secure = mediaCodecList.isSecurePlaybackSupported(mimeType, capabilities);

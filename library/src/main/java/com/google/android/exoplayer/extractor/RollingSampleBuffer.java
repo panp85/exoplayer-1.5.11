@@ -540,7 +540,7 @@ import java.util.concurrent.LinkedBlockingDeque;
       if (queueSize == 0) {
         return false;
       }
-	  Log.i("roll", "roll panpan test, in peekSample, go in, relativeReadIndex = " + relativeReadIndex);
+	  //Log.i("roll", "roll panpan test, in peekSample, go in, relativeReadIndex = " + relativeReadIndex);
       holder.timeUs = timesUs[relativeReadIndex];
       holder.size = sizes[relativeReadIndex];
       holder.flags = flags[relativeReadIndex];
@@ -556,7 +556,7 @@ import java.util.concurrent.LinkedBlockingDeque;
      *     required after advancing the index. Data prior to this position can be dropped.
      */
     public synchronized long moveToNextSample() {
-      Log.i("roll", "roll panpan test, in moveToNextSample, go in, relativeReadIndex = " + relativeReadIndex);
+      //Log.i("roll", "roll panpan test, in moveToNextSample, go in, relativeReadIndex = " + relativeReadIndex);
       queueSize--;
       int lastReadIndex = relativeReadIndex++;
       absoluteReadIndex++;

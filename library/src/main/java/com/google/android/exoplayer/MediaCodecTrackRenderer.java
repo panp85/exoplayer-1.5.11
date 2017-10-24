@@ -22,6 +22,7 @@ import android.media.MediaCodec.CryptoException;
 import android.media.MediaCrypto;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.util.Log;
 import com.google.android.exoplayer.MediaCodecUtil.DecoderQueryException;
 import com.google.android.exoplayer.drm.DrmInitData;
 import com.google.android.exoplayer.drm.DrmSessionManager;
@@ -347,8 +348,11 @@ public abstract class MediaCodecTrackRenderer extends SampleSourceTrackRenderer 
     if (!shouldInitCodec()) {
       return;
     }
+    Exception ex = new Exception("mediacodectracerenderer ijk panpan test.");
+	ex.printStackTrace();
 
     String mimeType = format.mimeType;
+	Log.i("ijk", "ijk panpan test, mimeType = " + mimeType);
     MediaCrypto mediaCrypto = null;
     boolean requiresSecureDecoder = false;
     if (drmInitData != null) {
@@ -595,7 +599,7 @@ public abstract class MediaCodecTrackRenderer extends SampleSourceTrackRenderer 
       sampleHolder.data = inputBuffers[inputIndex];
       sampleHolder.clearData();
     }
-
+    Log.i("ppt", "ijk ppt, in feedInputBuffer, inputIndex = " + inputIndex);
     if (codecReinitializationState == REINITIALIZATION_STATE_SIGNAL_END_OF_STREAM) {
       // We need to re-initialize the codec. Send an end of stream signal to the existing codec so
       // that it outputs any remaining buffers before we release it.

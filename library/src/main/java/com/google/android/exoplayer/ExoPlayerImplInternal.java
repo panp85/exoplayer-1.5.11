@@ -409,9 +409,11 @@ import java.util.concurrent.atomic.AtomicInteger;
     if (rendererMediaClock != null && enabledRenderers.contains(rendererMediaClockSource)
         && !rendererMediaClockSource.isEnded()) {
       positionUs = rendererMediaClock.getPositionUs();
+	  Log.i("ijk", "ppt, in updatePositionUs, rendererMediaClock, positionUs = " + positionUs);
       standaloneMediaClock.setPositionUs(positionUs);
     } else {
       positionUs = standaloneMediaClock.getPositionUs();
+	  Log.i("ijk", "ppt, in updatePositionUs, standaloneMediaClock, positionUs = " + positionUs);
     }
     elapsedRealtimeUs = SystemClock.elapsedRealtime() * 1000;
   }
